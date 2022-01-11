@@ -1,0 +1,280 @@
+a)
+csc343h-songnin2=> \i schema.ddl
+psql:schema.ddl:1: NOTICE:  drop cascades to 10 other objects
+DETAIL:  drop cascades to table npcs
+drop cascades to table discipline
+drop cascades to table athletes
+drop cascades to table teams
+drop cascades to table coaches
+drop cascades to table medals
+drop cascades to table ath_ori
+drop cascades to table team_ori
+drop cascades to table coach_ori
+drop cascades to table medal_ori
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+csc343h-songnin2=> \i cleaning_and_load_final.sql
+SET
+COPY 86
+COPY 23
+psql:cleaning_and_load_final.sql:5: NOTICE:  table "ath_ori" does not exist, skipping
+DROP TABLE
+psql:cleaning_and_load_final.sql:6: NOTICE:  table "coach_ori" does not exist, skipping
+DROP TABLE
+psql:cleaning_and_load_final.sql:7: NOTICE:  table "medal_ori" does not exist, skipping
+DROP TABLE
+psql:cleaning_and_load_final.sql:8: NOTICE:  table "team_ori" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+COPY 4527
+INSERT 0 4358
+CREATE TABLE
+COPY 212
+INSERT 0 211
+CREATE TABLE
+COPY 91
+INSERT 0 90
+CREATE TABLE
+COPY 2142
+INSERT 0 2142
+
+b)
+csc343h-songnin2=> NPCs \d
+               List of relations
+    Schema     |    Name    | Type  |  Owner
+---------------+------------+-------+----------
+ projectschema | ath_ori    | table | songnin2
+ projectschema | athletes   | table | songnin2
+ projectschema | coach_ori  | table | songnin2
+ projectschema | coaches    | table | songnin2
+ projectschema | discipline | table | songnin2
+ projectschema | medal_ori  | table | songnin2
+ projectschema | medals     | table | songnin2
+ projectschema | npcs       | table | songnin2
+ projectschema | team_ori   | table | songnin2
+ projectschema | teams      | table | songnin2
+(10 rows)
+
+csc343h-songnin2-> Discipline \d
+               List of relations
+    Schema     |    Name    | Type  |  Owner
+---------------+------------+-------+----------
+ projectschema | ath_ori    | table | songnin2
+ projectschema | athletes   | table | songnin2
+ projectschema | coach_ori  | table | songnin2
+ projectschema | coaches    | table | songnin2
+ projectschema | discipline | table | songnin2
+ projectschema | medal_ori  | table | songnin2
+ projectschema | medals     | table | songnin2
+ projectschema | npcs       | table | songnin2
+ projectschema | team_ori   | table | songnin2
+ projectschema | teams      | table | songnin2
+(10 rows)
+
+csc343h-songnin2-> Athletes \d
+               List of relations
+    Schema     |    Name    | Type  |  Owner
+---------------+------------+-------+----------
+ projectschema | ath_ori    | table | songnin2
+ projectschema | athletes   | table | songnin2
+ projectschema | coach_ori  | table | songnin2
+ projectschema | coaches    | table | songnin2
+ projectschema | discipline | table | songnin2
+ projectschema | medal_ori  | table | songnin2
+ projectschema | medals     | table | songnin2
+ projectschema | npcs       | table | songnin2
+ projectschema | team_ori   | table | songnin2
+ projectschema | teams      | table | songnin2
+(10 rows)
+
+csc343h-songnin2-> Teams \d
+               List of relations
+    Schema     |    Name    | Type  |  Owner
+---------------+------------+-------+----------
+ projectschema | ath_ori    | table | songnin2
+ projectschema | athletes   | table | songnin2
+ projectschema | coach_ori  | table | songnin2
+ projectschema | coaches    | table | songnin2
+ projectschema | discipline | table | songnin2
+ projectschema | medal_ori  | table | songnin2
+ projectschema | medals     | table | songnin2
+ projectschema | npcs       | table | songnin2
+ projectschema | team_ori   | table | songnin2
+ projectschema | teams      | table | songnin2
+(10 rows)
+
+csc343h-songnin2-> Coaches \d
+               List of relations
+    Schema     |    Name    | Type  |  Owner
+---------------+------------+-------+----------
+ projectschema | ath_ori    | table | songnin2
+ projectschema | athletes   | table | songnin2
+ projectschema | coach_ori  | table | songnin2
+ projectschema | coaches    | table | songnin2
+ projectschema | discipline | table | songnin2
+ projectschema | medal_ori  | table | songnin2
+ projectschema | medals     | table | songnin2
+ projectschema | npcs       | table | songnin2
+ projectschema | team_ori   | table | songnin2
+ projectschema | teams      | table | songnin2
+(10 rows)
+
+csc343h-songnin2-> Medals \d
+               List of relations
+    Schema     |    Name    | Type  |  Owner
+---------------+------------+-------+----------
+ projectschema | ath_ori    | table | songnin2
+ projectschema | athletes   | table | songnin2
+ projectschema | coach_ori  | table | songnin2
+ projectschema | coaches    | table | songnin2
+ projectschema | discipline | table | songnin2
+ projectschema | medal_ori  | table | songnin2
+ projectschema | medals     | table | songnin2
+ projectschema | npcs       | table | songnin2
+ projectschema | team_ori   | table | songnin2
+ projectschema | teams      | table | songnin2
+(10 rows)
+
+c)
+csc343h-songnin2=> SELECT count(*) FROM NPCs;
+ count
+-------
+    86
+(1 row)
+
+csc343h-songnin2=> SELECT count(*) FROM Discipline;
+ count
+-------
+    23
+(1 row)
+
+csc343h-songnin2=> SELECT count(*) FROM Athletes;
+ count
+-------
+  4358
+(1 row)
+
+csc343h-songnin2=> SELECT count(*) FROM Teams;
+ count
+-------
+   211
+(1 row)
+
+csc343h-songnin2=> SELECT count(*) FROM Coaches;
+ count
+-------
+    90
+(1 row)
+
+csc343h-songnin2=> SELECT count(*) FROM Medals;
+ count
+-------
+  2142
+(1 row)
+
+d)
+csc343h-songnin2=> SELECT * FROM NPCs WHERE rank < 10;
+ rank |            name            | namecode | gode | silver | bronze | total | rankbytotal
+------+----------------------------+----------+------+--------+--------+-------+-------------
+    1 | People's Republic of China | CHN      |   96 |     60 |     51 |   207 |           1
+    2 | Great Britain              | GBR      |   41 |     38 |     45 |   124 |           2
+    3 | United States of America   | USA      |   37 |     36 |     31 |   104 |           4
+    4 | RPC                        | RPC      |   36 |     33 |     49 |   118 |           3
+    5 | Netherlands                | NED      |   25 |     17 |     17 |    59 |           9
+    6 | Ukraine                    | UKR      |   24 |     47 |     27 |    98 |           5
+    7 | Brazil                     | BRA      |   22 |     20 |     30 |    72 |           7
+    8 | Australia                  | AUS      |   21 |     29 |     30 |    80 |           6
+    9 | Italy                      | ITA      |   14 |     29 |     26 |    69 |           8
+(9 rows)
+
+LINE 1: SELECT * FROM Discipline WHERE countryCode = 'CHN';
+                                       ^
+csc343h-songnin2=> SELECT * FROM Discipline;
+    disciplinename     | female | male | total
+-----------------------+--------+------+-------
+ Archery               |     60 |   79 |   139
+ Athletics             |    489 |  653 |  1142
+ Badminton             |     44 |   46 |    90
+ Boccia                |     41 |   73 |   114
+ Canoe Sprint          |     40 |   51 |    91
+ Cycling Road          |     74 |  139 |   213
+ Cycling Track         |     43 |   72 |   115
+ Equestrian            |     55 |   22 |    77
+ Football 5-a-side     |      0 |   78 |    78
+ Goalball              |     58 |   60 |   118
+ Judo                  |     56 |   80 |   136
+ Powerlifting          |     88 |   90 |   178
+ Rowing                |     56 |   52 |   108
+ Shooting              |     54 |  100 |   154
+ Sitting Volleyball    |     92 |   95 |   187
+ Swimming              |    263 |  341 |   604
+ Table Tennis          |    105 |  173 |   278
+ Taekwondo             |     35 |   36 |    71
+ Triathlon             |     40 |   40 |    80
+ Wheelchair Basketball |    118 |  144 |   262
+ Wheelchair Fencing    |     48 |   48 |    96
+ Wheelchair Rugby      |      4 |   88 |    92
+ Wheelchair Tennis     |     32 |   72 |   104
+(23 rows)
+
+csc343h-songnin2=> SELECT * FROM Athletes WHERE countryCode = 'LAT';
+   athletename    | countrycode |   sport    | dateofbirth | gendar
+------------------+-------------+------------+-------------+--------
+ APINIS Aigars    | LAT         | Athletics  | 1973-06-09  | Male
+ BERGS Edgars     | LAT         | Athletics  | 1984-09-15  | Male
+ DADZITE Diana    | LAT         | Athletics  | 1986-02-04  | Female
+ MELLE Ieva       | LAT         | Archery    | 1985-04-01  | Female
+ RORBAHA Baiba    | LAT         | Athletics  | 1992-07-11  | Female
+ SEMJONOVS Jurijs | LAT         | Swimming   | 1997-03-10  | Male
+ SNIKUS Rihards   | LAT         | Equestrian | 1988-03-25  | Male
+(7 rows)
+csc343h-songnin2=> SELECT * FROM Coaches WHERE countryCode = 'CHN';
+  coachname   | countrycode |         sport         | event
+--------------+-------------+-----------------------+-------
+ CHEN Qi      | CHN         | Wheelchair Basketball | Women
+ TANG Qun     | CHN         | Goalball              | Women
+ XU Huimin    | CHN         | Sitting Volleyball    | Women
+ XU Yufei     | CHN         | Football 5-a-side     | Men
+ YE Jing      | CHN         | Sitting Volleyball    | Men
+ YIN Shiqiang | CHN         | Goalball              | Men
+(6 rows)
+
+csc343h-songnin2=> SELECT * FROM Teams WHERE countryCode = 'CHN';
+          teamname          | countrycode |         sport         |                  event
+----------------------------+-------------+-----------------------+------------------------------------------
+ China                      | CHN         | Archery               | Mixed Team - W1
+ China                      | CHN         | Archery               | Mixed Team Compound - Open
+ China                      | CHN         | Archery               | Mixed Team Recurve - Open
+ People's Republic of China | CHN         | Athletics             | 4x100m Universal Relay
+ China                      | CHN         | Boccia                | Team - BC1/BC2
+ People's Republic of China | CHN         | Cycling Track         | Mixed C1-5 750m Team Sprint
+ China                      | CHN         | Football 5-a-side     | Men
+ China                      | CHN         | Goalball              | Men
+ China                      | CHN         | Goalball              | Women
+ China                      | CHN         | Sitting Volleyball    | Men
+ China                      | CHN         | Sitting Volleyball    | Women
+ China                      | CHN         | Swimming              | Men's 4x100m Freestyle Relay - 34 Points
+ China                      | CHN         | Swimming              | Men's 4x100m Medley Relay - 34 Points
+ China                      | CHN         | Swimming              | Mixed 4x100m Freestyle Relay - 49 Points
+ China                      | CHN         | Swimming              | Mixed 4x50m Freestyle Relay - 20 Points
+ China                      | CHN         | Swimming              | Women's 4x100m Freestyle Relay - 34 Pts
+ China                      | CHN         | Swimming              | Women's 4x100m Medley Relay - 34 Points
+ China                      | CHN         | Wheelchair Basketball | Women
+(18 rows)
+
+csc343h-songnin2=> SELECT * FROM Medals WHERE countryCode = 'KAZ';
+ countrycode |        name         |    sport     |             event              |    medal
+-------------+---------------------+--------------+--------------------------------+--------------
+ KAZ         | DEGTYAREV David     | Powerlifting | Men's -54 kg                   | Gold Medal
+ KAZ         | SARIYEV Anuar       | Judo         | Men -60 kg                     | Silver Medal
+ KAZ         | DAULET Temirzhan    | Judo         | Men -73 kg                     | Silver Medal
+ KAZ         | BAIBATINA Zarina    | Judo         | Women +70 kg                   | Silver Medal
+ KAZ         | ZHUMAGALI Nurdaulet | Swimming     | Men's 100m Breaststroke - SB13 | Bronze Medal
+(5 rows)

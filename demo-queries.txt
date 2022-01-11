@@ -1,0 +1,138 @@
+a)
+csc343h-songnin2=> \i schema.ddl
+psql:schema.ddl:1: NOTICE:  drop cascades to 10 other objects
+DETAIL:  drop cascades to table npcs
+drop cascades to table discipline
+drop cascades to table athletes
+drop cascades to table teams
+drop cascades to table coaches
+drop cascades to table medals
+drop cascades to table ath_ori
+drop cascades to table team_ori
+drop cascades to table coach_ori
+drop cascades to table medal_ori
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+csc343h-songnin2=> \i cleaning_and_load_final.sql
+SET
+COPY 86
+COPY 23
+psql:cleaning_and_load_final.sql:5: NOTICE:  table "ath_ori" does not exist, skipping
+DROP TABLE
+psql:cleaning_and_load_final.sql:6: NOTICE:  table "coach_ori" does not exist, skipping
+DROP TABLE
+psql:cleaning_and_load_final.sql:7: NOTICE:  table "medal_ori" does not exist, skipping
+DROP TABLE
+psql:cleaning_and_load_final.sql:8: NOTICE:  table "team_ori" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+COPY 4527
+INSERT 0 4358
+CREATE TABLE
+COPY 212
+INSERT 0 211
+CREATE TABLE
+COPY 91
+INSERT 0 90
+CREATE TABLE
+COPY 2142
+INSERT 0 2142
+
+b)
+csc343h-songnin2=> \i queries1.1.sql
+ rank | rankbytotal | namecode | count
+------+-------------+----------+-------
+   11 |          11 | JPN      |   262
+    1 |           1 | CHN      |   256
+    4 |           3 | RPC      |   248
+    3 |           4 | USA      |   243
+    7 |           7 | BRA      |   241
+    2 |           2 | GBR      |   221
+    8 |           6 | AUS      |   181
+   14 |          10 | FRA      |   146
+    6 |           5 | UKR      |   139
+   12 |          12 | GER      |   137
+   15 |          13 | ESP      |   137
+    9 |           8 | ITA      |   114
+   17 |          14 | POL      |    91
+    5 |           9 | NED      |    74
+   13 |          15 | IRI      |    63
+   16 |          20 | UZB      |    44
+   18 |          24 | HUN      |    39
+   10 |          20 | AZE      |    36
+   19 |          27 | SUI      |    21
+(19 rows)
+
+csc343h-songnin2=> \i queries1.2.sql
+ rank | rankbytotal | namecode | count
+------+-------------+----------+-------
+   11 |          11 | JPN      |    10
+    2 |           2 | GBR      |     8
+    3 |           4 | USA      |     6
+    1 |           1 | CHN      |     6
+   15 |          13 | ESP      |     5
+    7 |           7 | BRA      |     5
+    8 |           6 | AUS      |     5
+    6 |           5 | UKR      |     4
+   12 |          12 | GER      |     4
+    4 |           3 | RPC      |     3
+   14 |          10 | FRA      |     2
+   13 |          15 | IRI      |     2
+    9 |           8 | ITA      |     2
+    5 |           9 | NED      |     1
+(14 rows)
+
+csc343h-songnin2=> \i queries2.1.sql
+ rank | rankbytotal | namecode | gendardivide
+------+-------------+----------+--------------
+   16 |          20 | UZB      |            1
+    5 |           9 | NED      |            0
+    3 |           4 | USA      |            0
+   19 |          27 | SUI      |            0
+   18 |          24 | HUN      |            0
+    2 |           2 | GBR      |            1
+   12 |          12 | GER      |            1
+    6 |           5 | UKR      |            1
+   17 |          14 | POL      |            1
+   15 |          13 | ESP      |            2
+    8 |           6 | AUS      |            1
+   14 |          10 | FRA      |            2
+    1 |           1 | CHN      |            0
+    4 |           3 | RPC      |            1
+    7 |           7 | BRA      |            1
+   13 |          15 | IRI      |            6
+    9 |           8 | ITA      |            0
+   10 |          20 | AZE      |            2
+   11 |          11 | JPN      |            1
+(19 rows)
+
+csc343h-songnin2=> \i queries3.1.sql
+ rank | rankbytotal | namecode | agedivide
+------+-------------+----------+-----------
+    5 |           9 | NED      |         2
+    3 |           4 | USA      |         1
+   19 |          27 | SUI      |         0
+   18 |          24 | HUN      |         0
+    2 |           2 | GBR      |         1
+   12 |          12 | GER      |         1
+    6 |           5 | UKR      |         1
+   17 |          14 | POL      |         0
+   15 |          13 | ESP      |         0
+    8 |           6 | AUS      |         1
+   14 |          10 | FRA      |         0
+    1 |           1 | CHN      |         1
+    4 |           3 | RPC      |         1
+    7 |           7 | BRA      |         1
+   13 |          15 | IRI      |         0
+    9 |           8 | ITA      |         1
+   10 |          20 | AZE      |         2
+   11 |          11 | JPN      |         1
+   16 |          20 | UZB      |         4
+(19 rows)
